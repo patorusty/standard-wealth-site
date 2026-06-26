@@ -293,6 +293,125 @@
       color: var(--primary);
     }
 
+    /* Investor Resources */
+    .resources {
+      background: var(--bg);
+    }
+
+    .fact-sheet {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: 0 0 56px;
+      padding: 28px 40px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(6,62,51,0.12);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .fact-sheet:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .fact-sheet__main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fact-sheet__label {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .fact-sheet__sub {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.85rem;
+      opacity: 0.78;
+      margin-top: 4px;
+    }
+
+    .fact-sheet__icon {
+      margin-left: auto;
+      font-size: 1.6rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .letters__title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding-bottom: 20px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .letters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 48px;
+    }
+
+    .letter-col__y {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 24px 0 14px;
+      margin-bottom: 6px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .letter-col a {
+      display: block;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .letter-col a:hover {
+      color: var(--primary);
+      padding-left: 6px;
+    }
+
+    .letter-col--more {
+      display: none;
+    }
+
+    .letters-grid.is-expanded .letter-col--more {
+      display: block;
+    }
+
+    .letters__toggle {
+      display: block;
+      margin: 36px auto 0;
+      padding: 12px 34px;
+      background: none;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      color: var(--primary);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .letters__toggle:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
     /* Pillars */
     .pillars-section {
       background: var(--primary);
@@ -416,23 +535,32 @@
       }
 
       .header-logo {
-        height: 100px;
+        height: 80px;
       }
 
       .hero {
-        padding: 56px 0;
+        height: 240px;
       }
 
-      .hero blockquote {
+      .quote-section {
+        padding: 48px 0;
+      }
+
+      .quote-section blockquote {
         font-size: 1.1rem;
       }
 
       section {
-        padding: 56px 0;
+        padding: 48px 0;
       }
 
       .about-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .contact-email {
+        font-size: 1.1rem;
       }
 
       .metrics-grid,
@@ -442,6 +570,11 @@
 
       .details-grid {
         grid-template-columns: 1fr;
+      }
+
+      .letters-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0 32px;
       }
 
       .metric-card {
@@ -508,7 +641,7 @@
           <div class="metric-label">Track Record</div>
         </div>
         <div class="metric-card">
-          <div class="metric-value">15.5%</div>
+          <div class="metric-value">16.5%</div>
           <div class="metric-label">Annualized Return</div>
         </div>
         <div class="metric-card">
@@ -644,6 +777,9 @@
               <td>2026</td>
               <td>2.7%</td>
               <td>0.2%</td>
+              <td>0.4%</td>
+              <td>9.1%</td>
+              <td>-0.3%</td>
               <td>&mdash;</td>
               <td>&mdash;</td>
               <td>&mdash;</td>
@@ -651,10 +787,7 @@
               <td>&mdash;</td>
               <td>&mdash;</td>
               <td>&mdash;</td>
-              <td>&mdash;</td>
-              <td>&mdash;</td>
-              <td>&mdash;</td>
-              <td>2.9%</td>
+              <td>12.5%</td>
             </tr>
           </tbody>
         </table>
@@ -678,7 +811,7 @@
         </div>
         <div class="detail-item">
           <span class="detail-label">Annualized Return</span>
-          <span class="detail-value">15.5%</span>
+          <span class="detail-value">16.5%</span>
         </div>
         <div class="detail-item">
           <span class="detail-label">Management Fee</span>
@@ -697,6 +830,71 @@
           <span class="detail-value">3.0%</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Investor Resources -->
+  <section class="resources">
+    <div class="container">
+      <h2 class="section-title section-title--center">Investor Resources</h2>
+
+      <a class="fact-sheet" href="assets/letters/SW-Fund-Fact-Sheet-2026-06.pdf" target="_blank" rel="noopener">
+        <span class="fact-sheet__main">
+          <span class="fact-sheet__label">Fund Fact Sheet</span>
+          <span class="fact-sheet__sub">Latest performance &amp; positioning &mdash; June 2026</span>
+        </span>
+        <span class="fact-sheet__icon">&rarr;</span>
+      </a>
+
+      <p class="letters__title">Investor Letters</p>
+      <div class="letters-grid">
+        <div class="letter-col">
+          <h3 class="letter-col__y">2026</h3>
+          <a href="assets/letters/SW-Investor-Letter-2026-Q1.pdf" target="_blank" rel="noopener">Q1 2026</a>
+        </div>
+        <div class="letter-col">
+          <h3 class="letter-col__y">2025</h3>
+          <a href="assets/letters/SW-Investor-Letter-2025-Q4.pdf" target="_blank" rel="noopener">Q4 2025</a>
+          <a href="assets/letters/SW-Investor-Letter-2025-Q3.pdf" target="_blank" rel="noopener">Q3 2025</a>
+          <a href="assets/letters/SW-Investor-Letter-2025-Q2.pdf" target="_blank" rel="noopener">Q2 2025</a>
+          <a href="assets/letters/SW-Investor-Letter-2025-Q1.pdf" target="_blank" rel="noopener">Q1 2025</a>
+        </div>
+        <div class="letter-col">
+          <h3 class="letter-col__y">2024</h3>
+          <a href="assets/letters/SW-Investor-Letter-2024-Q4.pdf" target="_blank" rel="noopener">Q4 2024</a>
+          <a href="assets/letters/SW-Investor-Letter-2024-Q3.pdf" target="_blank" rel="noopener">Q3 2024</a>
+          <a href="assets/letters/SW-Investor-Letter-2024-Q2.pdf" target="_blank" rel="noopener">Q2 2024</a>
+          <a href="assets/letters/SW-Investor-Letter-2024-Q1.pdf" target="_blank" rel="noopener">Q1 2024</a>
+        </div>
+        <div class="letter-col">
+          <h3 class="letter-col__y">2023</h3>
+          <a href="assets/letters/SW-Investor-Letter-2023-Q4.pdf" target="_blank" rel="noopener">Q4 2023</a>
+          <a href="assets/letters/SW-Investor-Letter-2023-Q3.pdf" target="_blank" rel="noopener">Q3 2023</a>
+          <a href="assets/letters/SW-Investor-Letter-2023-Q2.pdf" target="_blank" rel="noopener">Q2 2023</a>
+        </div>
+        <div class="letter-col letter-col--more">
+          <h3 class="letter-col__y">2022</h3>
+          <a href="assets/letters/SW-Investor-Letter-2022-Q4.pdf" target="_blank" rel="noopener">Q4 2022</a>
+          <a href="assets/letters/SW-Investor-Letter-2022-Q3.pdf" target="_blank" rel="noopener">Q3 2022</a>
+          <a href="assets/letters/SW-Investor-Letter-2022-Q2.pdf" target="_blank" rel="noopener">Q2 2022</a>
+          <a href="assets/letters/SW-Investor-Letter-2022-Q1.pdf" target="_blank" rel="noopener">Q1 2022</a>
+        </div>
+        <div class="letter-col letter-col--more">
+          <h3 class="letter-col__y">2021</h3>
+          <a href="assets/letters/SW-Investor-Letter-2021-Q4.pdf" target="_blank" rel="noopener">Q4 2021</a>
+          <a href="assets/letters/SW-Investor-Letter-2021-Q3.pdf" target="_blank" rel="noopener">Q3 2021</a>
+          <a href="assets/letters/SW-Investor-Letter-2021-Q2.pdf" target="_blank" rel="noopener">Q2 2021</a>
+          <a href="assets/letters/SW-Investor-Letter-2021-Q1.pdf" target="_blank" rel="noopener">Q1 2021</a>
+        </div>
+        <div class="letter-col letter-col--more">
+          <h3 class="letter-col__y">2020</h3>
+          <a href="assets/letters/SW-Investor-Letter-2020-Q4.pdf" target="_blank" rel="noopener">Q4 2020</a>
+          <a href="assets/letters/SW-Investor-Letter-2020-Q3.pdf" target="_blank" rel="noopener">Q3 2020</a>
+          <a href="assets/letters/SW-Investor-Letter-2020-Q2.pdf" target="_blank" rel="noopener">Q2 2020</a>
+          <a href="assets/letters/SW-Investor-Letter-2020-Q1.pdf" target="_blank" rel="noopener">Q1 2020</a>
+        </div>
+      </div>
+      <button class="letters__toggle" type="button" id="lettersToggle" aria-expanded="false">See earlier letters (2020&ndash;2022)</button>
     </div>
   </section>
 
@@ -738,6 +936,19 @@
       <p class="footer-copy">&copy; 2026 Standard Wealth. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('lettersToggle');
+      var grid = document.querySelector('.letters-grid');
+      if (!btn || !grid) return;
+      btn.addEventListener('click', function () {
+        var expanded = grid.classList.toggle('is-expanded');
+        btn.setAttribute('aria-expanded', expanded);
+        btn.innerHTML = expanded ? 'Show fewer letters' : 'See earlier letters (2020&ndash;2022)';
+      });
+    })();
+  </script>
 
 </body>
 </html>
